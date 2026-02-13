@@ -92,7 +92,7 @@ body {
     }
 }
 
-/* Main Container */
+
 .container {
     position: relative;
     z-index: 1;
@@ -104,7 +104,7 @@ body {
     padding: 2rem;
 }
 
-/* Welcome Screen */
+
 .welcome-screen {
     text-align: center;
     animation: fadeInScale 1s ease-out;
@@ -163,7 +163,7 @@ body {
     }
 }
 
-/* Welcome Button */
+
 .welcome-button {
     margin-top: 2rem;
     padding: 0;
@@ -301,7 +301,7 @@ body {
     50% { transform: translateY(-10px); }
 }
 
-/* Menu Screen */
+
 .menu-screen {
     display: none;
     text-align: center;
@@ -405,7 +405,7 @@ body {
     box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
 }
 
-/* Photo Gallery */
+
 .photo-gallery {
     display: none;
     max-width: 1200px;
@@ -580,7 +580,7 @@ body {
     animation: fadeInUp 1s 1s both;
 }
 
-/* Music Player */
+
 .music-screen {
     display: none;
     max-width: 500px;
@@ -732,7 +732,7 @@ body {
     }
 }
 
-/* Password Screen */
+
 .password-screen {
     display: none;
     max-width: 500px;
@@ -933,21 +933,17 @@ body {
     font-weight: 600;
 }
 
-/* ========================================
-   ADVANCED POLAROID ANIMATIONS
-   ======================================== */
 
-/* ANIMATION 1: Image Zoom on Hover */
 .polaroid-image img {
     transition: all 0.5s ease;
 }
 
 .polaroid:hover .polaroid-image img {
-    transform: scale(1.1);        /* Zoom in 10% */
-    filter: brightness(1.1);      /* Slightly brighter */
+    transform: scale(1.1);      
+    filter: brightness(1.1);   
 }
 
-/* ANIMATION 2: Breathing animation (not used, but available) */
+
 @keyframes breathe {
     0%, 100% {
         transform: scale(1);
@@ -957,34 +953,34 @@ body {
     }
 }
 
-/* ANIMATION 3: Dim other polaroids when hovering one */
+
 .polaroid-grid:hover .polaroid:not(:hover) {
-    opacity: 0.7;  /* Others fade to 70% opacity */
+    opacity: 0.7; 
 }
 
-/* ANIMATION 4: Shine Effect - white gradient sweeps across on hover */
+
 .polaroid::after {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;              /* Start off-screen left */
+    left: -100%;           
     width: 100%;
     height: 100%;
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255, 255, 255, 0.4),  /* White shine in middle */
+        rgba(255, 255, 255, 0.4),  
         transparent
     );
     transition: left 0.5s;
-    pointer-events: none;     /* Don't block clicks */
+    pointer-events: none;    
 }
 
 .polaroid:hover::after {
-    left: 100%;               /* Sweep to off-screen right */
+    left: 100%;              
 }
 
-/* ANIMATION 5: 3D Tilt Entry - when scrolling into view */
+
 @keyframes tiltIn {
     from {
         opacity: 0;
@@ -1000,29 +996,29 @@ body {
     animation: tiltIn 0.8s ease-out forwards;
 }
 
-/* ANIMATION 6: Continuous Subtle Float - gently moves up and down */
+
 @keyframes subtleFloat {
     0%, 100% {
         transform: translateY(0px) rotate(var(--rotation, 0deg));
     }
     50% {
-        transform: translateY(-10px) rotate(var(--rotation, 0deg));  /* Float up 10px */
+        transform: translateY(-10px) rotate(var(--rotation, 0deg));
     }
 }
 
-/* Apply floating animation to all polaroids */
+
 .polaroid {
-    animation: subtleFloat 3s ease-in-out infinite;  /* 3 second loop */
+    animation: subtleFloat 3s ease-in-out infinite; 
 }
 
-/* Individual timing and rotation for each polaroid (creates natural, staggered effect) */
+
 .polaroid:nth-child(1) { 
     animation-delay: 0s;
-    --rotation: -3deg;    /* Tilted left */
+    --rotation: -3deg;  
 }
 .polaroid:nth-child(2) { 
     animation-delay: 0.2s;
-    --rotation: 2deg;     /* Tilted right */
+    --rotation: 2deg;   
 }
 .polaroid:nth-child(3) { 
     animation-delay: 0.4s;
@@ -1053,28 +1049,24 @@ body {
     --rotation: -3deg;
 }
 
-/* ANIMATION 7: Pulse Shadow Effect on Hover - pulsing pink glow */
+
 @keyframes pulse {
     0% {
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
     50% {
-        box-shadow: 0 20px 50px rgba(255, 107, 157, 0.4);  /* Pink glow expands */
+        box-shadow: 0 20px 50px rgba(255, 107, 157, 0.4);
     }
     100% {
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
 }
 
-/* Apply pulse animation when hovering any polaroid */
+
 .polaroid:hover {
     animation: pulse 1s ease-in-out infinite;
 }
 
-/* ==========================================
-   FLOWER INTRO ANIMATION
-   Plays once when page first loads
-   ========================================== */
 .flower-intro {
     position: fixed;
     top: 0;
@@ -1103,7 +1095,7 @@ body {
     opacity: 0;
 }
 
-/* Individual flower animations */
+
 .flower:nth-child(1) {
     top: 50%;
     left: 50%;
@@ -1193,7 +1185,7 @@ body {
     }
 }
 
-/* Create burst pattern */
+
 .flower:nth-child(1) { --x: 0px; --y: -300px; }
 .flower:nth-child(2) { --x: 260px; --y: -150px; }
 .flower:nth-child(3) { --x: 260px; --y: 150px; }
@@ -1214,7 +1206,7 @@ body {
     }
 }
 
-/* Hide welcome content initially until flower animation completes */
+
 .welcome-screen {
     animation: fadeInAfterFlowers 1s 3s forwards;
     opacity: 0;

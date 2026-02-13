@@ -1,4 +1,4 @@
-// Music player variables
+
 let isPlaying = false;
 let currentSongIndex = 0;
 let audio;
@@ -11,17 +11,17 @@ const songs = [
     { title: "BTS Jungkook (정국) 'Still With You' Lyrics", src: "music/BTS Jungkook (정국) 'Still With You' Lyrics.mp3"}
 ];
 
-// Password for letter
+
 const LETTER_PASSWORD = "041619";
 let isLetterUnlocked = false;
 
-// Initialize audio when page loads
+
 window.addEventListener('DOMContentLoaded', () => {
     audio = document.getElementById('audioPlayer');
     playBtn = document.getElementById('playBtn');
     vinyl = document.getElementById('vinyl');
     
-    // Load saved volume or set default to 0.5
+
     const savedVolume = localStorage.getItem('musicVolume');
     if (savedVolume !== null) {
         audio.volume = parseFloat(savedVolume);
@@ -32,28 +32,25 @@ window.addEventListener('DOMContentLoaded', () => {
         document.getElementById('volumeSlider').value = 0.5;
     }
     
-    // Load saved playback state
+
     const savedIsPlaying = localStorage.getItem('isPlaying');
     const savedSongIndex = localStorage.getItem('currentSongIndex');
     const savedTime = localStorage.getItem('currentTime');
     
-    // Load saved song if exists
+ 
     if (savedSongIndex !== null) {
         currentSongIndex = parseInt(savedSongIndex);
         loadSong();
     }
     
-    // Restore saved time position
+
     if (savedTime !== null) {
         audio.currentTime = parseFloat(savedTime);
     }
     
-    // ==========================================
-    // AUTO-PLAY MUSIC LOGIC
-    // ==========================================
-    // Wait 1 second after page load, then start music
+ 
     setTimeout(() => {
-        // Always try to auto-play on fresh load or if was playing before
+   
         audio.play().then(() => {
             isPlaying = true;
             if (playBtn) playBtn.textContent = '⏸️';
@@ -61,13 +58,13 @@ window.addEventListener('DOMContentLoaded', () => {
             console.log('🎵 Music started automatically!');
         }).catch(err => {
             console.log('⚠️ Auto-play blocked by browser. User needs to click play button.');
-            // If auto-play fails, still set button state correctly
+          
             isPlaying = false;
             if (playBtn) playBtn.textContent = '▶️';
         });
     }, 1000);
     
-    // Save playback state periodically
+   
     setInterval(() => {
         if (audio) {
             localStorage.setItem('isPlaying', isPlaying);
@@ -76,12 +73,12 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }, 1000);
     
-    // Auto-advance to next song when current ends
+  
     audio.addEventListener('ended', () => {
         nextSong();
     });
     
-    // Password input Enter key listener
+  
     const passwordInput = document.getElementById('passwordInput');
     if (passwordInput) {
         passwordInput.addEventListener('keypress', (e) => {
@@ -114,10 +111,10 @@ function showLetter() {
     document.getElementById('menuScreen').classList.remove('active');
     
     if (isLetterUnlocked) {
-        // Show letter directly if already unlocked
+       
         document.getElementById('letterScreen').classList.add('active');
     } else {
-        // Show password screen
+        
         document.getElementById('passwordScreen').classList.add('active');
     }
 }
@@ -128,7 +125,7 @@ function showMusic() {
 }
 
 function backToMenu() {
-    // Don't stop music when going back
+  
     document.getElementById('photoGallery').classList.remove('active');
     document.getElementById('letterScreen').classList.remove('active');
     document.getElementById('musicScreen').classList.remove('active');
@@ -149,7 +146,7 @@ function checkPassword() {
     } else {
         errorMessage.style.display = 'block';
         passwordInput.value = '';
-        // Shake animation
+   
         const passwordBox = document.querySelector('.password-box');
         passwordBox.style.animation = 'shake 0.5s';
         setTimeout(() => {
@@ -224,34 +221,28 @@ function toggleMute() {
     }
 }
 
-/* ========================================
-   POLAROID SCROLL ANIMATION
-   Uses Intersection Observer API to trigger
-   animations when polaroids come into view
-   ======================================== */
 
-// Intersection Observer for polaroid animations
 document.addEventListener('DOMContentLoaded', () => {
-    // Get all polaroid elements
+  
     const polaroids = document.querySelectorAll('.polaroid');
     
-    // Configuration for when to trigger animation
+    
     const observerOptions = {
-        threshold: 0.2,                    // Trigger when 20% of element is visible
-        rootMargin: '0px 0px -50px 0px'   // Trigger 50px before element fully enters viewport
+        threshold: 0.2,                   
+        rootMargin: '0px 0px -50px 0px'  
     };
     
-    // Create observer that watches for elements entering viewport
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add 'animate-in' class to trigger 3D tilt animation
+               
                 entry.target.classList.add('animate-in');
             }
         });
     }, observerOptions);
     
-    // Start observing each polaroid
+    
     polaroids.forEach(polaroid => {
         observer.observe(polaroid);
     });
