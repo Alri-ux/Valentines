@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day! 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ==========================================
+         FLOATING HEARTS & IMAGES BACKGROUND
+         Mix of emoji hearts and actual images
+         that float from bottom to top
+         ========================================== -->
+    <div class="heart-bg">
+        <div class="heart-float heart-emoji">💕</div>
+        <div class="heart-float heart-emoji">💖</div>
+        <div class="heart-float heart-emoji">💗</div>
+        <div class="heart-float heart-emoji">💝</div>
+        <div class="heart-float heart-emoji">💘</div>
+        <div class="heart-float heart-emoji">❤️</div>
+        <div class="heart-float heart-emoji">💞</div>
+        <div class="heart-float heart-emoji">💓</div>
+    </div>
+
+    <!-- ==========================================
+         FLOWER ANIMATION INTRO
+         Plays once when page loads
+         ========================================== -->
+    <div class="flower-intro" id="flowerIntro">
+        <div class="flower-container">
+            <div class="flower">🌸</div>
+            <div class="flower">🌺</div>
+            <div class="flower">🌷</div>
+            <div class="flower">🌹</div>
+            <div class="flower">🌻</div>
+            <div class="flower">💐</div>
+            <div class="flower">🌸</div>
+            <div class="flower">🌺</div>
+            <div class="flower">🌷</div>
+            <div class="flower">🌹</div>
+            <div class="flower">🌻</div>
+            <div class="flower">💐</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div class="welcome-screen" id="welcomeScreen">
+            <h1 class="welcome-title">Happy Valentine's Day!!</h1>
+            <p class="welcome-subtitle">Janelle F. Mandigma, RN 💕</p>
+            <button class="welcome-button" onclick="openEnvelope()">
+                <div class="button-design">
+                    <span class="button-sparkle">✨</span>
+                    <span class="button-sparkle">✨</span>
+                    <span class="button-sparkle">✨</span>
+                    <span class="button-sparkle">✨</span>
+                    <div class="button-icon">💝</div>
+                    <div class="button-text">Open Me!</div>
+                </div>
+            </button>
+            <p class="click-hint">Click to reveal your surprise ✨</p>
+        </div>
+
+        <!-- Menu Screen -->
+        <div class="menu-screen" id="menuScreen">
+            <h2 class="menu-title">Choose Your Surprise 💝</h2>
+            <div class="menu-buttons">
+                <button class="menu-btn photos" onclick="showPhotos()">
+                    <span class="menu-btn-icon">📸</span>
+                    <span>Our Memories</span>
+                </button>
+                <button class="menu-btn letter" onclick="showLetter()">
+                    <span class="menu-btn-icon">💌</span>
+                    <span>Love Letter</span>
+                </button>
+                <button class="menu-btn music" onclick="showMusic()">
+                    <span class="menu-btn-icon">🎵</span>
+                    <span>Our Song</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Photo Gallery -->
+        <div class="photo-gallery" id="photoGallery">
+            <h2 class="gallery-title">Our Beautiful Moments Together 💕</h2>
+            <div class="polaroid-grid">
+                <div class="polaroid">
+                    <div class="polaroid-image">
+                        <img src="images/img08.jpg" alt="Couple holding hands">
+                    </div>
+                    <p class="polaroid-caption">In the simplest moments, I find my happiness with you.</p>
+                </div>
+                <div class="polaroid">
+                    <div class="polaroid-image">
+                        <img src="images/img06.jpg" alt="Magnet with hearts">
+                    </div>
+                    <p class="polaroid-caption">With you by my side, every day feels like a sunny escape.</p>
+                </div>
+                <div class="polaroid">
+                    <div class="polaroid-image">
+                        <img src="images/img05.jpg" alt="Teddy bear">
+                    </div>
+                    <p class="polaroid-caption">In your arms, even the waves feel calm.</p>
+                </div>
+                <div class="polaroid">
+                    <div class="polaroid-image">
+                        <img src="images/img02.jpg" alt="Heart envelope">
+                    </div>
+                    <p class="polaroid-caption">No matter where we go, you’re my favorite view.</p>
+                </div>
+                <div class="polaroid">
+                    <div class="polaroid-image">
+                        <img src="images/img07.jpg" alt="Cupid's arrow">
+                    </div>
+                    <p class="polaroid-caption">One look at you, and my heart smiles.</p>
+                </div>
+                <div class="polaroid">
+                    <div class="polaroid-image">
+                        <img src="images/img09.jpg" alt="Love letter in envelope">
+                    </div>
+                    <p class="polaroid-caption">Anywhere feels right as long as I’m sitting next to you.</p>
+                </div>
+                <div class="polaroid">
+                    <div class="polaroid-image">
+                        <img src="images/img10.jpg" alt="Paper plane with heart">
+                    </div>
+                    <p class="polaroid-caption">Loving you feels easy, natural, and real.</p>
+                </div>
+                <!-- Additional 2 polaroids -->
+                <div class="polaroid">
+                    <div class="polaroid-image">
+                        <img src="images/img04.jpg" alt="Our moment 8">
+                    </div>
+                    <p class="polaroid-caption">These little moments with you mean everything to me.</p>
+                </div>
+                <div class="polaroid">
+                    <div class="polaroid-image">
+                        <img src="images/img01.jpg" alt="Our moment 9">
+                    </div>
+                    <p class="polaroid-caption">No matter how big the world is, I choose you—always.</p>
+                </div>
+            </div>
+            <button class="back-btn" onclick="backToMenu()">← Back to Menu</button>
+        </div>
+
+      <div class="password-screen" id="passwordScreen">
+            <div class="password-box">
+                <h2 class="password-title">🔒 Protected Letter</h2>
+                <p class="password-subtitle">This is for your eyes only</p>
+                <p class="password-hint">play music first before reading the letter</p>
+                <input 
+                    type="password" 
+                    id="passwordInput" 
+                    class="password-input" 
+                    placeholder="MMDDYY"
+                    maxlength="6"
+                >
+                <button class="password-submit" onclick="checkPassword()">
+                    Unlock 💕
+                </button>
+                <p class="error-message" id="errorMessage">
+                    ❌ Wrong password! Try again...
+                </p>
+            </div>
+            <button class="back-btn" onclick="backToMenu()" style="display: block; margin: 2rem auto 0;">← Back to Menu</button>
+        </div>
+
+        <!-- Letter -->
+        <div class="letter-screen" id="letterScreen">
+            <div class="letter-container">
+                <div class="letter-header">
+                    <h2 class="letter-title">To My Dearest Love</h2>
+                    <p class="letter-date">Valentine's Day 2026</p>
+                </div>
+                <div class="letter-content">
+                    <p>Mahal,</p>
+                    <p>Happy Valentine’s, mahal. Alam ko na hindi ko ’to nasasabi madalas, pero mahal na mahal kita. Iba talaga ang feeling ko kapag ikaw ang kasama ko. You make my world softer, brighter, and better. ey english</p>
+                    
+                    <!-- Letter Images -->
+                    <div class="letter-images">
+                        <div class="letter-image-item">
+                            <img src="images/letterimg1.jpg" alt="Us">
+                            <p class="letter-image-caption">Little Moments, Big Love</p>
+                        </div>
+                        <div class="letter-image-item">
+                            <img src="images/letterimg2.jpg" alt="Together">
+                            <p class="letter-image-caption">Side by Side</p>
+                        </div>
+                        <div class="letter-image-item">
+                            <img src="images/letterimg3.jpg" alt="Happy">
+                            <p class="letter-image-caption">Happy Moments</p>
+                        </div>
+                        <div class="letter-image-item">
+                            <img src="images/letterimg4.jpg" alt="Love">
+                            <p class="letter-image-caption">My Favorite Person</p>
+                        </div>
+                    </div>
+                    
+                    <p>Salamat sa lahat ng memories na binigay mo sa akin. Sa tawa, iyak, at mga simpleng sandali na ginawa mong espesyal. Bawat araw na kasama kita ay blessing at adventure.</p>
+                    <p>Sana walang magbago sa atin. Gusto ko kung ano tayo ngayon, lalo ngayon na nasa next level na tayo ng buhay graduate ka na at graduating ako. Hindi pa tayo sigurado sa mga mangyayari sa future, pero sigurado akong ikaw ang kasama ko at sabay natin haharapin lahat ng problema sa buhay</p>
+                    <p>Ayun lang I love you and Forever grateful sa'yo, mahal. Happy Valentine's Day! 💕</p>
+                </div>
+                <div class="letter-signature">
+                    With all my love,<br>
+                    Yours always ❤️
+                </div>
+            </div>
+            <button class="back-btn" onclick="backToMenu()" style="display: block; margin: 2rem auto 0;">← Back to Menu</button>
+        </div>
+
+        <!-- Music Player -->
+        <div class="music-screen" id="musicScreen">
+            <div class="music-player">
+                <h2 class="music-title">Music that reminds me of you. 🎶💕</h2>
+                <div class="vinyl-container">
+                    <div class="vinyl" id="vinyl"></div>
+                </div>
+                <div class="music-controls">
+                    <button class="control-btn" onclick="previousSong()">⏮️</button>
+                    <button class="control-btn play-btn" id="playBtn" onclick="togglePlay()">▶️</button>
+                    <button class="control-btn" onclick="nextSong()">⏭️</button>
+                </div>
+                
+                <!-- Volume Controls -->
+                <div class="volume-controls">
+                    <span class="volume-icon" id="volumeIcon" onclick="toggleMute()">🔊</span>
+                    <input 
+                        type="range" 
+                        id="volumeSlider" 
+                        class="volume-slider" 
+                        min="0" 
+                        max="1" 
+                        step="0.01" 
+                        value="0.5"
+                        oninput="changeVolume(this.value)"
+                    >
+                </div>
+                
+                <p class="now-playing">Now Playing:</p>
+                <p class="song-title" id="songTitle">wave to earth - love</p>
+                <audio id="audioPlayer" loop>
+                    <source src="music/wave to earth - love. (lyrics).mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <button class="back-btn" onclick="backToMenu()" style="display: block; margin: 2rem auto 0;">← Back to Menu</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
