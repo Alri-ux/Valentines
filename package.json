@@ -1,0 +1,11 @@
+{
+  "name": "valentines-website",
+  "version": "1.0.0",
+  "description": "Valentine's Day website for Janelle",
+  "scripts": {
+    "start": "npx serve . -p $PORT"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}
